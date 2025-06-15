@@ -1,0 +1,18 @@
+const images = [
+  "images/room1_1.png",
+  "images/room1_2.png",
+  "images/room1_3.png",
+  "images/room1_4.png",
+  "images/room1_5.png",
+  "images/room1_6.png",
+  "images/room1_7.png",
+  "images/room1_8.png",
+  "images/room1_9.png",
+  "images/room1_10.png",
+  "images/room1_11.png",
+  "images/room1_12.png",
+  "images/room1_13.png",
+  "images/room1_14.png",
+  "images/room1_15.png",
+  "images/room1_16.png",
+];

@@ -14,7 +14,7 @@
   height: 100%;
   object-fit: contain;   /* instead of cover */
   background-color:black; /* optional: avoids whitespace if aspect ratios vary */
-  transition: opacity 5s ease-in-out;
+  transition: opacity 7s ease-in-out;
   opacity: 0;
   pointer-events: none;
 }
