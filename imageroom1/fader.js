@@ -1,23 +1,41 @@
-const images = [
-  'images/img1.jpg',
-  'images/img2.jpg',
-  'images/img3.jpg'
-];
+function startFader(images) {
+  console.log(`[${new Date().toLocaleTimeString()}] 🚀 startFader called with images:`, images);
 
-let current = 0;
-const imgElement = document.getElementById('fade-img');
+  let frontImg = document.getElementById('imgA');
+  let backImg = document.getElementById('imgB');
 
-function crossfade() {
-  // Step 1: Fade out
-  imgElement.style.opacity = 0;
+  if (!frontImg || !backImg) {
+    console.error("❌ Could not find image elements #imgA or #imgB");
+    return;
+  }
 
-  // Step 2: Change image after fade duration
-  setTimeout(() => {
+  let current = images.length - 1; // Start from the last image
+  frontImg.src = images[current];
+  frontImg.style.opacity = 1;
+  backImg.style.opacity = 0;
+
+  function crossfade() {
     current = (current + 1) % images.length;
-    imgElement.src = images[current];
-    imgElement.style.opacity = 1;
-  }, 2000); // Match CSS transition duration
-}
+    const nextSrc = images[current];
 
-// Run every 4 seconds
-setInterval(crossfade, 4000);
+    const imgPreloader = new Image();
+    imgPreloader.src = nextSrc;
+    imgPreloader.onload = () => {
+      const temp = frontImg;
+      frontImg = backImg;
+      backImg = temp;
+
+      backImg.src = nextSrc;
+      backImg.style.opacity = 1;
+      frontImg.style.opacity = 0;
+
+      console.log(`[${new Date().toLocaleTimeString()}] 🔁 Crossfaded to image: ${nextSrc}`);
+    };
+  }
+
+  // Start the first fade after a brief delay
+  setTimeout(() => {
+    crossfade(); // first transition
+    setInterval(crossfade, 12000); // continue every 15s
+  }, 100);
+}

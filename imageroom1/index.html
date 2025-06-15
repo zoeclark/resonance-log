@@ -7,9 +7,20 @@
 </head>
 <body>
   <div id="image-container">
-    <img id="fade-img" src="images/room1/mind riad 1.png" alt="Fading Image">
+    <img class="fade-img" id="imgA" src="images/room1_1.png" />
+    <img class="fade-img" id="imgB" src="images/room1_2.png" />
   </div>
-
-  <script src="fader.js"></script>
 </body>
+
+<!-- Load JavaScript after body to ensure DOM is ready -->
+<script src="fader.js"></script>
+<script>
+  const images = [
+    'images/room1_1.png',
+    'images/room1_2.png',
+    'images/room1_3.png',
+    'images/room1_4.png',
+  ];
+  startFader(images);
+</script>
 </html>
