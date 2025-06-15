@@ -1,11 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>dinghvadinidselfidest</title>
+  <meta charset="UTF-8" />
+  <title>A.L.P.INC</title>
+  <link rel="stylesheet" href="home.css">
 </head>
 <body>
-  <h1>A.L.PINC</h1>
-  <p>This sound will continue to play. You're inside the loop</p>
-  <p><a href="room1/">enter mind room 1</a></p>
+  <div id="overlay">
+    <h1 class="text-highlight">A.L.P.INC</h1>
+    <p class="text-highlight">This sound will continue to play. You're inside the loop.</p>
+    <div class="room-links">
+      <a href="room1/" class="room-link text-highlight">Room 1</a>
+      <a href="room2/" class="room-link text-highlight">Room 2</a>
+      <!-- Add more as needed -->
+    </div>
+  </div>
+ 
+
+  <script src="doorImages.js"></script>
+  <script>
+    const background = doorImages[Math.floor(Math.random() * doorImages.length)];
+    document.body.style.backgroundImage = `url(${background})`;
+  </script>
 </body>
 </html>

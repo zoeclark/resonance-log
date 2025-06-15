@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Image Fader</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="image-container">
+    <img class="fade-img" id="imgA" src="images/room1_1.png" />
+    <img class="fade-img" id="imgB" src="images/room1_2.png" />
+  </div>
+</body>
+
+<!-- Load JavaScript after body to ensure DOM is ready -->
+ <script src="image_list.js"></script>
+  <script src="fader.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      startFader(images);  // uses the array defined in images.js
+    });
+  </script>
+</body>
+</html>
