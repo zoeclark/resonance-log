@@ -36,6 +36,6 @@ function startFader(images) {
   // Start the first fade after a brief delay
   setTimeout(() => {
     crossfade(); // first transition
-    setInterval(crossfade, 12000); // continue every 15s
-  }, 100);
+    setInterval(crossfade, 5000); // continue every 15s
+  }, 300);
 }
